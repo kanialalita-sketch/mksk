@@ -9,244 +9,147 @@ Pada bab ini, akan dijelaskan tentang latar belakang dan permasalahan yang disel
 \section{Latar Belakang}
 \label{sec:latarBelakang}
 %-----------------------------------------------------------------------------%
-% \todo{Tentukan latar belakang dari penelitian Anda di sini (\f{background}).}
+\todo{Tentukan latar belakang dari penelitian Anda di sini (\f{background}).}
 
-Pertumbuhan industri \textit{e-commerce marketplace} dalam beberapa tahun terakhir tidak hanya meningkatkan volume pengiriman, tetapi juga memperketat persaingan antar marketplace. Dalam lingkungan kompetitif tersebut, kecepatan dan ketepatan pengiriman menjadi faktor diferensiasi utama dalam memenangkan pelanggan. Masing-masing \textit{marketplace} berlomba-lomba menawarkan pengalaman pengiriman yang lebih cepat dan andal melalui standar \textit{Service Level Agreement} (SLA) yang semakin ketat. Dalam perspektif manajemen rantai pasok, diferensiasi tingkat layanan merupakan respons strategis terhadap tekanan kompetitif dan kebutuhan penyelarasan antara strategi operasional dan strategi pasar \citep{book:chopra}.
+Tugas Akhir merupakan salah satu kegiatan yang menjadi "penentu nasib" atas lulusnya seorang mahasiswa dari suatu universitas.
+Umumnya, mahasiswa yang mengerjakan Tugas Akhir diwajibkan untuk menuliskan sebuah laporan dengan tata bahasa ilmiah dan dengan ketentuan \f{format} tertentu.
+Laporan tersebut, memiliki struktur yang kurang lebih mirip, dari manapun fakultas asal seorang mahasiswa.
 
-Sebagai salah satu perusahaan \textit{Third-Party Logistics }(3PL) di Indonesia, PT Andiarta Muzizat berperan dalam mendukung pengiriman yang berasal dari berbagai \textit{platform marketplace}. Dalam praktiknya, perusahaan harus mengelola beberapa standar SLA secara bersamaan karena masing-masing \textit{marketplace} dapat memiliki definisi batas waktu, mekanisme perhitungan SLA, toleransi keterlambatan, serta skema penalti yang berbeda. Kondisi ini menyebabkan terbentuknya \textit{Multi-Service Level Agreement} (Multi-SLA) dalam satu jaringan distribusi yang sama. Multi-SLA dalam penelitian ini juga merepresentasikan heterogenitas  waktu dan definisi batas pelanggaran dalam sistem distribusi yang sama. Hal ini sejalan dengan temuan \citep{ates2022} yang menunjukkan bahwa peningkatan diferensiasi layanan dan tekanan lingkungan eksternal berkontribusi terhadap meningkatnya kompleksitas rantai pasok dan berpotensi menurunkan kinerja operasional apabila tidak dikelola secara sistematis.
+Umumnya, mahasiswa Universitas Indonesia menggunakan Microsoft Word, OpenOffice, atau \f{rich-text editor} lainnya untuk menyusun laporan Tugas Akhir mereka.
+Akan tetapi, terkadang \f{template} yang dibuat untuk Microsoft Word memiliki beberapa keterbatasan dan inkonsistensi dalam pengaturan tata letak.
+Selain itu, terdapat beberapa hal yang sulit untuk diotomatisasi, contohnya adalah penggunaan sitasi dan pengaturan nomor halaman.
+Oleh karena itu, diperlukan alternatif lain untuk menyusun Tugas Akhir yang lebih nyaman.
 
-Kompleksitas tahapan operasional yang disebut juga \textit{Parcel Journey}, dari Mil Pertama (\textit{First Mile}) hingga Mil Terakhir (\textit{Last Mile}) (lihat Gambar \ref{fig:parcel_journey}), serta dinamika \textit{reverse logistics} atau disebut juga \textit{Return to Sender} (RTS), meningkatkan risiko akumulasi keterlambatan. Keterlambatan pada satu tahapan dapat berdampak sistemik pada tahapan berikutnya dan mempercepat habisnya sisa waktu SLA. Realisasi penalti yang mencapai proporsi signifikan dari target bulanan menunjukkan bahwa risiko pelanggaran SLA atau \textit{"SLA Breach"} belum terkendali secara optimal. Kondisi ini tidak hanya meningkatkan beban biaya dan menekan profitabilitas, tetapi juga berpotensi memengaruhi reputasi perusahaan sebagai mitra logistik yang andal dan kompetitif dalam ekosistem \textit{marketplace}. Selain itu, meskipun data waktu tersedia pada setiap tahapan proses, pengelolaan risiko masih bersifat reaktif dan belum didukung mekanisme prediksi dan peringatan dini. 
+Beberapa mahasiswa Fakultas Ilmu Komputer Universitas Indonesia (Fasilkom UI) di tahun 2010-an mulai menggunakan \gls{latex} untuk menyusun Tugas Akhir.
+Sifat \gls{latex} yang berupa \f{mark up language}, memiliki cara pemakaian yang jauh berbeda dibandingkan \f{rich-text editor} seperti Microsoft Word.
+Awalnya, menyusun tata letak yang sesuai dengan persyaratan Tugas Akhir di UI cukup sulit, karena artinya harus membaca dokumentasi.
+Akan tetapi, dengan kemahiran mereka dalam menyusun kode yang mudah dibaca dan terstruktur, struktur yang mereka buat dapat dijadikan sebuah \f{template} yang konsisten tata letaknya hingga bertahun-tahun berikutnya.
+Dengan menggunakan sebuah \f{template}, mahasiswa cukup mengetikkan isi dari Tugas Akhir mereka tanpa harus repot mengatur ulang tata letak secara manual.
+Mahasiswa bisa menggunakan \f{macro} atau perintab yang sudah disediakan untuk \f{template}.
 
-\begin{figure}
-	\centering
-	\includegraphics[width=1\textwidth]{MKSK/Tugas 1/assets/pics/parjo.png}
-	\caption{Tahapan Operasional atau \textit{Parcel Journey}}
-	\label{fig:parcel_journey}
-\end{figure}
+Adanya perubahan pada peraturan Tugas Akhir yang ditentukan oleh \cite{ui:pedoman_ta}, memunculkan kebutuhan untuk perubahan \f{template} \gls{latex} ini secara signifikan.
+Perubahan pada \f{template} ini dilakukan pertama kali pada semester gasal tahun ajaran 2019/2020.
+Perubahan dilakukan mengingat adanya kebutuhan dari mahasiswa Lab \f{Reliable Software Engineering} (RSE), Fasilkom UI untuk menyusun Tugas Akhir menggunakan \gls{latex}.
+\f{Template} ini kemudian di-\f{maintain} secara berkala, mengikuti umpan balik dan pendapat pengguna \f{template} ini, tidak hanya dari Fasilkom UI, namun juga dari berbagai fakultas lain di UI.
+Dengan mulai meluasnya penggunaan \f{template} Tugas Akhir UI ini, diperlukan sebuah contoh penggunaan untuk memudahkan mahasiswa yang baru mulai melaksanakan Tugas Akhir mereka.
+Dokumen dan repositori ini, diharapkan selain menjadi repositori kode \f{template}, juga menjadi repositori contoh penggunaan \f{template} dan panduan penggunaan \f{template}.
 
-Padahal, perkembangan \textit{data science} dan \textit{machine learning} (ML) dalam industri logistik telah memungkinkan pemodelan risiko secara probabilistik dan berbasis data historis \citep{richey2023}; \citep{bruni2023}. Namun, penerapan terstruktur untuk memprediksi risiko SLA Breach serta mengidentifikasi tahapan operasional dan jenis perjalanan (\textit{Forward} atau RTS) yang paling berkontribusi terhadap pelanggaran masih terbatas, khususnya dalam lingkungan Multi-SLA.
 
-Perkembangan bidang ML dalam dua dekade terakhir menawarkan pendekatan yang lebih sistematis dalam pengelolaan risiko operasional. Secara umum, ML terbagi menjadi dua pendekatan utama, yaitu \textit{unsupervised learning} dan \textit{supervised learning}. \textit{Unsupervised learning} digunakan untuk mengidentifikasi pola tersembunyi dalam data tanpa label, seperti \textit{clustering} berdasarkan pola SLA pada fase operasional (awal, tengah, akhir). Pendekatan ini memungkinkan identifikasi titik kritis dalam proses distribusi yang berpotensi meningkatkan risiko keterlambatan.
 
-Sementara itu, \textit{supervised learning} digunakan untuk membangun model prediktif berbasis data historis yang telah memiliki label, misalnya status \textit{Breach} atau \textit{non-Breach}. Dengan memanfaatkan variabel seperti keterlambatan per mil, durasi \textit{dwell time} atau \textit{parcel aging}, dan status RTS, model dapat mengestimasi probabilitas SLA \textit{Breach} secara kuantitatif. Dalam konteks Multi-SLA, pendekatan ini memungkinkan pembentukan penilaian risiko atau \textit{risk scoring} yang mempertimbangkan perbedaan karakteristik antar jenis perjalanan (Forward atau RTS) serta dinamika konsumsi SLA \textit{buffer}.
-
-Dengan mengadopsi pendekatan berbasis ML, perusahaan dapat lebih responsif terhadap dinamika permintaan dan memastikan alokasi sumber daya yang optimal untuk memenuhi kebutuhan pelanggan. Oleh karena itu, penelitian mengenai perancangan sistem prediktif dalam lingkungan Multi-SLA memiliki relevansi tinggi serta potensi kontribusi signifikan bagi pengembangan industri logistik di masa depan.
-
-Penelitian ini tidak hanya membangun model prediktif, tetapi juga mengusulkan kerangka dekomposisi risiko berbasis tahapan operasional dan jenis perjalanan dalam konteks Multi-SLA \textit{marketplace} yang belum banyak dieksplorasi dalam literatur.
 %-----------------------------------------------------------------------------%
-\section{Rumusan Masalah}
-\label{sec:rumusanMasalah}
+\section{Permasalahan}
+\label{sec:masalah}
 %-----------------------------------------------------------------------------%
-% \todo{Sebutkan permasalahan penelitian Anda dari latar belakang tersebut.}
+\todo{Sebutkan permasalahan penelitian Anda dari latar belakang tersebut.}
 
-Berdasarkan latar belakang yang telah diuraikan pada \sect~\ref{sec:latarBelakang}, pengelolaan risiko SLA Breach pada pengiriman \textit{marketplace} dalam operasi Multi-SLA pada PT Andiarta Muzizat masih menghadapi tantangan yang signifikan. Realisasi penalti yang telah mencapai sekitar XX\% dari target bulanan menunjukkan bahwa mekanisme pengendalian risiko belum berjalan secara optimal.
+Latar belakang yang telah dijelaskan pada \sect~\ref{sec:latarBelakang}, menjelaskan bahwa diperlukan sebuah \f{template}~\gls{latex} Tugas Akhir UI yang konsisten dan bisa disesuaikan dengan peraturan terbaru dari universitas.
+Selain itu, diperlukan juga sebuah \f{tutorial} (panduan penggunaan) yang memudahkan pengguna \f{template} di masa yang akan datang.
 
-Selain itu, meskipun data operasional historis tersedia pada setiap tahapan operasional: Mil Pertama, Mil Tengah, dan Mil Terakhir, belum tersedia analisis kuantitatif yang mampu:
+%-----------------------------------------------------------------------------%
+\subsection{Definisi Permasalahan}
+\label{sec:definisiMasalah}
+%-----------------------------------------------------------------------------%
+Berikut ini adalah rumusan permasalahan dari penelitian yang dilakukan:
 \begin{enumerate}
-    \item Mengidentifikasi tahapan operasional yang paling berkontribusi terhadap SLA Breach,
-    \item Membandingkan kontribusi jenis perjalanan \textit{Forward} dan RTS,
-    \item Menghasilkan sistem penilaian risiko (\textit{risk scoring}) untuk mendukung intervensi dini.
+	\item Bagaimana cara menyusun \f{template}~\gls{latex} Tugas Akhir di Universitas Indonesia?
+	\item Bagaimana cara mengajarkan penggunaan \f{template} dan bahasa \gls{latex} secara umum ke mahasiswa yang akan menjalani Tugas Akhir?
 \end{enumerate}
-
-Kondisi tersebut menunjukkan bahwa sistem monitoring saat ini masih bersifat reaktif dan belum memanfaatkan pendekatan prediktif berbasis \textit{Advanced Analytics} dan ML. Kesenjangan antara kondisi aktual, harapan, dan permasalahan yang ada dirangkum secara sistematis dalam Tabel \ref{tab:tabRumusanMasalah}.
-
-\begin{table}[H]
-\centering
-\caption{Tabel Harapan dan Kenyataan}
-\label{tab:tabRumusanMasalah}
-\begin{tabular}{|p{5.3cm}|p{4.7cm}|p{3.5cm}|}
-\hline
-\textbf{Kenyataan} & \textbf{Harapan} & \textbf{Masalah} \\
-\hline
-
-Monitoring risiko masih bersifat reaktif, sementara seharusnya tersedia sistem peringatan dini berbasis probabilitas risiko.
-& Tersedia sistem peringatan dini dengan nilai risiko (\textit{risk scoring}) untuk prioritisasi 
-& \multirow{4}{3.5cm}{
-Tidak tersedia kerangka analitik untuk memprediksi risiko pelanggaran SLA dan mengukur kontribusi faktor tahapan operasional
-} \\
-\cline{1-2}
-Realisasi penalti akibat SLA Breach telah mencapai sekitar XX\% dari total target bulanan 
-& Penalti terkendali dan risiko dapat diprediksi 
-&  \\
-\cline{1-2}
-Tidak tersedia metrik kontribusi (\%) per mil terhadap pelanggaran SLA, padahal tahapan dominan seharusnya dapat diidentifikasi secara kuantitatif
-& Tersedia analisis kontribusi (\%) per mil terhadap SLA Breach
-&  \\
-\cline{1-2}
-Kontribusi \textit{Forward} dan RTS terhadap Breach belum terukur dengan jelas 
-& Adanya pengukuran kuantitatif untuk membandingkan kontribusi keduanya secara objektif
-&  \\
-
-\hline
-\end{tabular}
-\end{table}
-
-Tabel \ref{tab:tabRumusanMasalah} menunjukkan bahwa akar permasalahan tidak hanya terletak pada aspek teknis, tetapi juga pada ketiadaan kerangka analitik kuantitatif untuk mengukur dan memodelkan risiko SLA Breach secara menyeluruh. Untuk memahami akar penyebab tersebut secara lebih mendalam dan terstruktur, dilakukan analisis menggunakan diagram Ishikawa (fishbone) yang mengelompokkan faktor-faktor penyebab ke dalam empat dimensi utama, yaitu \textit{People, Process, Technology}, dan \textit{Organization} \citep{book:marchewka2016}, sebagaimana ditampilkan pada Gambar \ref{fig:fishbone_sla}.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{MKSK/Tugas 1/assets/pics/Fishbone_01.png}
-\caption{Analisis Akar Permasalahan Penyebab SLA Breach}
-\label{fig:fishbone_sla}
-\end{figure}
-
-Gambar \ref{fig:fishbone_sla} diatas menunjukkan bahwa salah satu akar permasalahan dari kurangnya pencegahan pelanggaran SLA dari aspek Teknologi adalah belum tersedianya sistem prediktif untuk mitigasi risiko pelanggaran SLA.
-
-Pada aspek \textit{Organization}, KPI yang masih berfokus pada \textit{Forward}, koordinasi lintas fungsi yang terbatas, dan belum adanya prioritisasi menyebabkan pengelolaan risiko belum terintegrasi. Pada aspek \textit{People}, ketidakpatuhan SOP, human error, dan keterbatasan kapasitas kurir meningkatkan potensi keterlambatan. Dari sisi \textit{Process}, keterlambatan yang melebihi waktu \textit{cut-off}, keputusan RTS, serta tingginya \textit{parcel aging} menunjukkan pengendalian yang masih reaktif. Sementara pada aspek \textit{Technology}, belum tersedia sistem prediksi probabilitas Breach maupun metrik kontribusi per mil.
-
-Meskipun akar permasalahan bersifat multidimensional, penelitian ini secara khusus memfokuskan intervensi pada dimensi \textit{Technology}, yaitu perancangan sistem analitik prediktif berbasis ML. Pendekatan ini dipilih karena penguatan dimensi teknologi melalui pemodelan risiko kuantitatif diharapkan dapat menjadi penopang perbaikan pada dimensi lainnya.
-
-Dengan demikian, permasalahan dalam penelitian ini dapat diformulasikan sebagai \textit{probabilistic risk modeling problem} dalam sistem distribusi \textit{multi-stage} dengan \textit{constraint} Multi-SLA.  Permasalahan ini menempatkan penelitian pada domain \textit{predictive analytics} untuk \textit{operational risk management} dalam sistem distribusi dengan \textit{constraint} waktu yang heterogen. Setiap tahapan operasional merepresentasikan komponen risiko yang saling berinteraksi dan mempengaruhi probabilitas terjadinya pelanggaran SLA secara kumulatif. Oleh karena itu, diperlukan pendekatan kuantitatif berbasis ML untuk memodelkan risiko secara terstruktur dan terukur.
+\todo{Tuliskan permasalahan yang ingin diselesaikan. Bisa juga berbentuk pertanyaan}
 
 %-----------------------------------------------------------------------------%
-\section{Pertanyaan Penelitian}
-\label{sec:rq}
-%-----------------------------------------------------------------------------%
-
-Berdasarkan identifikasi dan analisis penyebab permasalahan yang dijabarkan pada \ref{sec:rumusanMasalah}, maka rumusan masalah dalam penelitian ini adalah:
-\begin{enumerate}
-    \item Bagaimana pengaruh faktor operasional terhadap probabilitas terjadinya SLA Breach pada pengiriman marketplace dalam lingkungan Multi-SLA 3PL?
-    \item Bagaimana merancang sistem prediktif berbasis ML untuk mitigasi risiko SLA Breach secara proaktif untuk:
-    \begin{itemize}
-        \item Mengestimasi probabilitas SLA Breach secara kuantitatif,
-        \item Mengidentifikasi tahapan operasional yang paling berkontribusi,
-        \item Membandingkan kontribusi jenis perjalanan Forward dan RTS,
-        \item Menghasilkan mekanisme risk scoring untuk mendukung pengambilan keputusan operasional secara proaktif?
-    \end{itemize}
-\end{enumerate}
-
-
-%-----------------------------------------------------------------------------%
-\section{Batasan Masalah}
+\subsection{Batasan Permasalahan}
 \label{sec:batasanMasalah}
 %-----------------------------------------------------------------------------%
-Penelitian ini dibatasi untuk menjaga keselarasan antara fokus permasalahan yang diidentifikasi pada \sect~ \ref{sec:rumusanMasalah}, pertanyaan penelitian yang dirumuskan pada \sect~ \ref{sec:rq}, serta ketersediaan data operasional di lingkungan PT Andiarta Muzizat sebagai perusahaan 3PL dengan operasi Multi-SLA.
-
-\begin{itemize}
-    \item \textbf{Ruang Lingkup Data dan Objek Penelitian}
-        \begin{itemize}
-            \item Segmentasi Pelanggan: Data yang digunakan terbatas pada paket (parcel) yang berasal dari platform \textit{marketplace}. Pengiriman B2B \textit{non-marketplace} atau kontrak khusus lainnya tidak termasuk dalam cakupan.
-            \item Periode Data: Analisis dilakukan menggunakan data historis operasional dalam periode waktu tertentu untuk memastikan model menangkap dinamika tren terbaru.
-        \end{itemize}
-    \item \textbf{Ruang Lingkup Variabel Operasional}
-        \begin{itemize}
-            \item Fokus Variabel Internal: Variabel prediktor berfokus pada data operasional internal seperti timestamp tiap tahapan operasional, durasi proses atau \textit{parcel aging}, status perjalanan (\textit{Forward} atau RTS), dan parameter spesifik dari masing-masing \textit{marketplace}.
-            \item Eksklusi Faktor Eksternal: Penelitian tidak memperhitungkan variabel luar seperti kondisi cuaca, kepadatan lalu lintas \textit{real-time}, atau fluktuasi makroekonomi guna menjaga fokus pada efisiensi proses internal.
-        \end{itemize}
-    \item \textbf{Ruang Lingkup Permasalahan (Fokus Dimensi Teknologi)}\\Mengacu pada analisis akar masalah sesuai yang direpresentasikan pada Gambar \ref{fig:fishbone_sla}, penelitian dibatasi secara spesifik pada dimensi \textit{Technology}, yaitu ketiadaan kerangka analitik prediktif. Penelitian \textbf{tidak} melakukan simulasi atau intervensi pada dimensi lainnya.
-    \item \textbf{Ruang Lingkup Metodologi}
-        \begin{itemize}
-            \item Pendekatan Algoritma: Model terbatas pada Supervised Learning untuk klasifikasi biner (Breach vs non-Breach) dan Unsupervised Learning untuk identifikasi pola risiko pada fase operasional.
-            \item Metrik Evaluasi: Keberhasilan model diukur melalui metrik klasifikasi standar seperti \textit{Accuracy, Precision, Recall}, dan \textit{Area Under the Curve} (AUC). Optimasi \textit{hyperparameter} yang mendalam atau penggunaan \textit{Deep Learning }kompleks berada di luar lingkup ini.
-        \end{itemize}
-    \item \textbf{Ruang Lingkup \textit{Output} (Keluaran Sistem)}
-        \begin{itemize}
-            \item Transisi Reaktif ke Proaktif: Output penelitian berupa sistem penilaian risiko (\textit{risk scoring}) dan peringatan dini (\textit{early warning system}). Penelitian tidak mencakup otomatisasi penuh (\textit{fully autonomous}) atau intervensi langsung terhadap kebijakan operasional perusahaan.
-            \item Batasan Implementasi: Penelitian ini berfokus pada perancangan dan validasi model serta tidak mencakup implementasi pada skala produksi (\textit{production deployment}) ke dalam arsitektur \textit{cloud} maupun sistem \textit{enterprise} secara menyeluruh.
-        \end{itemize}
-\end{itemize}
-%------------------------------------------------------------
-\section{Tujuan Penelitian}
-\label{sec:tujuanPenelitian}
-%------------------------------------------------------------
-
-Penelitian ini bertujuan untuk merancang dan memvalidasi sistem prediktif berbasis ML guna mendukung mitigasi risiko SLA Breach secara proaktif dalam lingkungan operasi Multi-SLA 3PL. Secara khusus, tujuan penelitian ini adalah sebagai berikut.
-
+Berikut ini adalah asumsi yang digunakan sebagai batasan penelitian ini:
 \begin{enumerate}
-    \item Menganalisis pengaruh faktor-faktor operasional terstruktur (seperti \textit{parcel aging} dan durasi per mil) terhadap probabilitas terjadinya SLA Breach pada pengiriman \textit{marketplace} menggunakan pendekatan kuantitatif.
-    \item Mengukur dan mengidentifikasi kontribusi spesifik dari setiap tahapan operasional terhadap akumulasi risiko pelanggaran SLA guna menemukan titik kritis dalam jaringan distribusi.
-    \item Mengevaluasi secara komparatif signifikansi kontribusi antara perjalanan Forward dan RTS terhadap probabilitas keterlambatan pengiriman.
-    \item Membangun dan memvalidasi model \textit{supervised learning} berbasis data historis untuk mengestimasi probabilitas SLA Breach sebagai permasalahan klasifikasi biner (\textit{Breach vs non-Breach}).
-    \item Merancang mekanisme risk scoring sebagai dasar Sistem Peringatan Dini (\textit{Early Warning System}) yang berfungsi murni sebagai sistem pendukung keputusan (\textit{decision support system}) operasional, tanpa mencakup implementasi pada skala produksi (\textit{production deployment}) ke dalam sistem perusahaan.
+	\item Salah satu batasannya adalah, ini hanya \f{template}.
 \end{enumerate}
+
+\todo{Umumnya ada asumsi atau batasan yang digunakan untuk menjawab pertanyaan-pertanyaan penelitian diatas.}
+
+
+%-----------------------------------------------------------------------------%
+\section{Tujuan Penelitian}
+\label{sec:tujuan}
+%-----------------------------------------------------------------------------%
+Berikut ini adalah tujuan penelitian yang dilakukan:
+\begin{enumerate}
+	\item Untuk memberikan \f{template} yang dapat mempermudah skripsi orang lain.
+\end{enumerate}
+
+\todo{Tuliskan tujuan penelitian Anda di bagian ini.}
 
 
 %-----------------------------------------------------------------------------%
 \section{Manfaat Penelitian}
 \label{sec:manfaat}
 %-----------------------------------------------------------------------------%
-Penelitian ini diharapkan memberikan manfaat baik secara akademik maupun praktis sebagai berikut:
+Berikut ini adalah manfaat penelitian yang dilakukan:
 \begin{enumerate}
-    \item Manfaat Akademik
-    
-\begin{itemize}
-    \item Memberikan kontribusi empiris terhadap penerapan \textit{machine learning} dalam manajemen risiko operasional pada industri 3PL.
-    \item Mengembangkan pendekatan kuantitatif untuk melakukan dekomposisi risiko \textit{SLA Breach} berdasarkan tahapan operasional dan jenis perjalanan.
-    \item Menjadi referensi penelitian lanjutan dalam pengembangan sistem prediktif pada lingkungan \textit{Multi-SLA}.
-\end{itemize}
-
-\item Manfaat Praktis
-
-\begin{itemize}
-    \item Membantu perusahaan mengidentifikasi shipment berisiko tinggi sebelum batas waktu SLA terlampaui.
-    \item Mengurangi risiko operasional, terutama yang berkaitan dengan finansial, yang disebabkan oleh  \textit{SLA Breach} melalui prioritisasi berbasis probabilitas.
-    \item Mendukung alokasi sumber daya yang lebih tepat sasaran berdasarkan tingkat risiko.
-    \item Meningkatkan keandalan kinerja operasional dan menjaga reputasi perusahaan dalam ekosistem marketplace.
-\end{itemize}
+	\item Penelitian ini memberikan \f{template} yang harapannya dapat mempermudah skripsi orang lain.
 \end{enumerate}
 
-% %-----------------------------------------------------------------------------%
-% \section{Posisi Penelitian}
-% \label{sec:posisiPenelitian}
-% %-----------------------------------------------------------------------------%
-% \todo{
-% 	Sebutkan posisi penelitian Anda. Ada baiknya jika Anda menggunakan gambar atau diagram.
-% 	Template ini telah menyediakan contoh cara memasukkan gambar.
-% }
-
-% \begin{figure}
-% 	\centering
-% 	\includegraphics[width=0.4\textwidth]{assets/pics/makara.png}
-% 	\caption{Penjelasan singkat terkait gambar.}
-% 	\label{fig:research_position}
-% \end{figure}
-
-% \todo{
-% 	Jelaskan \pic~\ref{fig:research_position} di sini.
-% 	Setiap gambar yang dimasukkan ke tugas akhir \bo{WAJIB} untuk dijelaskan oleh minimal satu paragraf.
-% }
+\todo{Tuliskan tujuan penelitian Anda di bagian ini.}
 
 
-% %-----------------------------------------------------------------------------%
-% \section{Langkah Penelitian}
-% \label{sec:langkahPenelitian}
-% %-----------------------------------------------------------------------------%
-% \todo{
-% 	Subbab ini umumnya menjelaskan metode penelitian, jika metode yang digunakan cukup sederhana.
-% 	Jika metode yang digunakan cukup kompleks atau ada kewajiban dari fakultas Anda untuk menjelaskan metode secara rinci, gunakan Bab 3 untuk menjelaskan Metodologi Penelitian.
-% }
-% Berikut ini adalah langkah penelitian yang telah dilakukan:
-% \begin{enumerate}
-% 	\item Tinjauan literatur \\
-% 	Pada tahap ini, dipelajari teori-teori yang terkait dengan penelitian ini untuk mendapatkan konsep dasar yang dibutuhkan dalam mencapai tujuan penelitian.
-% 	\item Analisis implementasi dan kesimpulan \\
-% 	Pada tahap ini, digunakan studi kasus untuk analisis terkait kegunaan \f{template}.
-% 	Setelah melakukan analisis tersebut, ditarik kesimpulan keseluruhan dari penelitian ini.
-% \end{enumerate}
+%-----------------------------------------------------------------------------%
+\section{Posisi Penelitian}
+\label{sec:posisiPenelitian}
+%-----------------------------------------------------------------------------%
+\todo{
+	Sebutkan posisi penelitian Anda. Ada baiknya jika Anda menggunakan gambar atau diagram.
+	Template ini telah menyediakan contoh cara memasukkan gambar.
+}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.4\textwidth]{assets/pics/makara.png}
+	\caption{Penjelasan singkat terkait gambar.}
+	\label{fig:research_position}
+\end{figure}
+
+\todo{
+	Jelaskan \pic~\ref{fig:research_position} di sini.
+	Setiap gambar yang dimasukkan ke tugas akhir \bo{WAJIB} untuk dijelaskan oleh minimal satu paragraf.
+}
+
+
+%-----------------------------------------------------------------------------%
+\section{Langkah Penelitian}
+\label{sec:langkahPenelitian}
+%-----------------------------------------------------------------------------%
+\todo{
+	Subbab ini umumnya menjelaskan metode penelitian, jika metode yang digunakan cukup sederhana.
+	Jika metode yang digunakan cukup kompleks atau ada kewajiban dari fakultas Anda untuk menjelaskan metode secara rinci, gunakan Bab 3 untuk menjelaskan Metodologi Penelitian.
+}
+Berikut ini adalah langkah penelitian yang telah dilakukan:
+\begin{enumerate}
+	\item Tinjauan literatur \\
+	Pada tahap ini, dipelajari teori-teori yang terkait dengan penelitian ini untuk mendapatkan konsep dasar yang dibutuhkan dalam mencapai tujuan penelitian.
+	\item Analisis implementasi dan kesimpulan \\
+	Pada tahap ini, digunakan studi kasus untuk analisis terkait kegunaan \f{template}.
+	Setelah melakukan analisis tersebut, ditarik kesimpulan keseluruhan dari penelitian ini.
+\end{enumerate}
 
 
 %-----------------------------------------------------------------------------%
 \section{Sistematika Penulisan}
 \label{sec:sistematikaPenulisan}
 %-----------------------------------------------------------------------------%
-Sistematika penulisan penelitian ini disusun sebagai berikut:
-
+Sistematika penulisan laporan adalah sebagai berikut:
 \begin{itemize}
-    \item \textbf{Bab I Pendahuluan}  
-    Berisi latar belakang, perumusan masalah, batasan masalah, tujuan penelitian, manfaat penelitian, dan sistematika penulisan.
-
-    \item \textbf{Bab II Tinjauan Pustaka}  
-    Membahas teori dan penelitian terdahulu terkait \textit{Multi-SLA}, manajemen kinerja 3PL, \textit{machine learning}, serta pendekatan prediksi risiko operasional.
-
-    \item \textbf{Bab III Metodologi Penelitian}  
-    Menjelaskan desain penelitian, sumber dan karakteristik data, pemilihan variabel, metode \textit{machine learning}, serta metrik evaluasi model.
-
-    \item \textbf{Bab IV Perancangan dan Implementasi Model}  
-    Menguraikan proses pengolahan data, pembangunan model prediktif, analisis kontribusi faktor operasional, serta perancangan mekanisme \textit{risk scoring}.
-
-    \item \textbf{Bab V Analisis dan Pembahasan}  
-    Menyajikan hasil evaluasi model, interpretasi kontribusi faktor operasional, serta implikasi manajerial.
-
-    \item \textbf{Bab VI Kesimpulan dan Rekomendasi}  
-    Berisi kesimpulan penelitian dan rekomendasi pengembangan lebih lanjut.
+	\item Bab 1 \babSatu \\
+	    Bab ini mencakup latar belakang, cakupan penelitian, dan pendefinisian masalah.
+	\item Bab 2 \babDua \\
+	    Bab ini mencakup pemaparan terminologi dan teori yang terkait dengan penelitian berdasarkan hasil tinjauan pustaka yang telah digunakan, sekaligus memperlihatkan kaitan teori dengan penelitian.
+	\item Bab 3 \babTiga \\
+	    Apa itu Bab 3?
+	\item Bab 4 \babEmpat \\
+		Apa itu Bab 4?
+	\item Bab 5 \babLima \\
+	    Apa itu Bab 5?
+	\item Bab 6 \kesimpulan \\
+	    Bab ini mencakup kesimpulan akhir penelitian dan saran untuk pengembangan berikutnya.
 \end{itemize}
+
+\todo{Anda bisa mengubah atau menambahkan penjelasan singkat mengenai isi masing-masing bab. Setiap tugas akhir pasti ada yang berbeda pada bagian ini.}
