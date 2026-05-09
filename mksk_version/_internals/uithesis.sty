@@ -24,6 +24,7 @@
 %   2018, dan tesis MIK Fasilkom UI angkatan 2019-2021
 % - Kontribusi open source
 
+
 %-----------------------------------------------------------------------------%
 % Package
 %-----------------------------------------------------------------------------%
@@ -36,7 +37,6 @@
 \usepackage{enumitem}
 \usepackage{booktabs}% http://ctan.org/pkg/booktabs
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
-
 
 % tocloft: To define your own list of things
 \usepackage[titles]{tocloft}
@@ -99,22 +99,7 @@
 \usepackage{longtable}
 
 % Untuk support landscape beberapa halaman yang diperlukan.
-\usepackage{lscape}
-\usepackage{fancyhdr}
-\usepackage{etoolbox}
-
-\fancypagestyle{landscape}{
-    \fancyhf{}
-    \fancyfoot[C]{}
-    \renewcommand{\headrulewidth}{0pt}
-    \renewcommand{\footrulewidth}{0pt}
-}
-
-\AtBeginEnvironment{landscape}{\pagestyle{landscapepage}}
-
-\makeatletter
-\g@addto@macro\LT@output{\thispagestyle{landscapepage}}
-\makeatother
+\usepackage{pdflscape}
 
 % Untuk memberikan gambar dengan letak yang absolute (bisa diatur sesuka hati)
 \usepackage{tikzpagenodes}
@@ -126,6 +111,9 @@
 
 % Membuat seluruh tulisan menjadi Times New Roman.
 \usepackage{pslatex}
+
+% Package untuk membuat header dan footer pada dokumen.
+\usepackage{fancyhdr}
 
 % Package untuk memasukan berkas pdf sebagai bagian dari dokumen.
 \usepackage{pdfpages}
@@ -156,16 +144,16 @@
 
 % Format sitasi, uncomment salah satu jenis untuk menggunakan jenis tersebut.
 % Anda bisa menambahkan dukungan untuk format sitasi lainnya jika diperlukan.
-% APA (sitasi dalam dan luar paragraf).
+%% APA (sitasi dalam dan luar paragraf).
 \usepackage[natbibapa]{apacite}
 \bibliographystyle{apalike}
-% % IEEE
+%% IEEE
 % \usepackage{natbib}
 % \bibliographystyle{IEEEtran}
-% % ACM
+%% ACM
 % \bibliographystyle{acm}
-% MLA (unduh berkas mla.bst dari https://www.ctan.org/tex-archive/biblio/bibtex/contrib/mla/mla.bst
-%	  ke direktori _internals)
+%% MLA (unduh berkas mla.bst dari https://www.ctan.org/tex-archive/biblio/bibtex/contrib/mla/mla.bst
+%%	  ke direktori _internals)
 % \usepackage{natbib}
 % \bibliographystyle{_internals/mla}
 
@@ -423,11 +411,8 @@
 	\renewcommand{\refname}{\bibname}
 	\renewcommand{\BBAA}{\&}
 	\renewcommand{\BBAB}{dan}
-	\renewcommand{\BRetrievedFrom}{}
+	\renewcommand{\BRetrievedFrom}{Diakses dari }
 	\renewcommand{\BRetrieved}[1]{Diakses pada tanggal {#1}, dari\ }
-    \renewcommand{\APACrefDOI}[1]{https://doi.org/#1}
-    \renewcommand{\APACrefISBN}[1]{ISBN: #1}
-    \renewcommand{\APACrefnote}[1]{#1}
 }
 
 %-----------------------------------------------------------------------------%
